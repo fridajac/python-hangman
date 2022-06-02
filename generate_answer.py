@@ -1,8 +1,8 @@
 import random
 
-words_level1 = ["Summer", "Spice", "Lilly"]
-words_level2 = ["Musicplayer", "Slenderman", "Soulmate"]
-words_level3 = ["Acquiesce", "Appease", "Circumspect"]
+words_level1 = ["summer", "spice", "lilly"]
+words_level2 = ["musicplayer", "slenderman", "soulmate"]
+words_level3 = ["acquiesce", "appease", "circumspect"]
 
 
 def generate_answer(level):
