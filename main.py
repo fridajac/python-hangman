@@ -1,6 +1,5 @@
 # Start game by invite
 from check_level import check_level
-from correct_guess import correct_guess
 from create_hidden_word import create_hidden_word
 from generate_answer import generate_answer
 from make_a_guess import make_a_guess
@@ -8,15 +7,19 @@ from make_a_guess import make_a_guess
 
 def start_game(answer):
     hidden_word = create_hidden_word(len(answer))
-
     print(answer)
     while True:
         for i in hidden_word:
             print(i, end=' ')
         print()
         guess = input('Guess a letter a-z')
-        if make_a_guess(guess, answer):
-            correct_guess(hidden_word, guess, answer)
+        result = make_a_guess(hidden_word, guess, answer)
+        if result is not None:
+            hidden_word = result
+            print("Yey! That's right")
+            if "_" not in hidden_word:
+                print("Good job, you did it!")
+                break
         else:
             print("Nope, go again!")
 
