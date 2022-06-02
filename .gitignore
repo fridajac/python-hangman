@@ -162,4 +162,7 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
+/shelf/
+/workspace.xml
+
 # End of https://www.toptal.com/developers/gitignore/api/virtualenv,macos,pycharm
