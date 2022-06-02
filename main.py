@@ -5,9 +5,9 @@ from generate_answer import generate_answer
 from make_a_guess import make_a_guess
 
 
-def start_game(answer):
+def play_game(answer):
+    nbr_of_tries = 10
     hidden_word = create_hidden_word(len(answer))
-    print(answer)
     while True:
         for i in hidden_word:
             print(i, end=' ')
@@ -21,7 +21,13 @@ def start_game(answer):
                 print("Good job, you did it!")
                 break
         else:
-            print("Nope, go again!")
+            print("No, sorry")
+            nbr_of_tries -= 1
+            if nbr_of_tries == 0:
+                print("Sorry, you lost! Hanging man is dead!")
+                break
+            else:
+                print(nbr_of_tries, " attempts left")
 
 
 def main():
@@ -36,7 +42,7 @@ def main():
 
     print(f'Hi, {name}' + f'! Welcome to level {level}')
     answer = generate_answer(level)
-    start_game(answer)
+    play_game(answer)
 
 
 main()
