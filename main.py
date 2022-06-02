@@ -1,24 +1,25 @@
-
+import re
 # Start game by invite
 from check_level import check_level
+from create_hidden_word import create_hidden_word
 from generate_answer import generate_answer
 from make_a_guess import make_a_guess
 
 
-def create_hidden_word(number):
-    hidden_word = []
-    for element in number:
-        hidden_word.append("_")
-    return hidden_word
-
 def start_game(answer):
     hidden_word = create_hidden_word(len(answer))
-    print(hidden_word)
-    guess = input('Guess a letter a-z')
-    if make_a_guess(guess, answer):
-        print("Yey! That's right. Your word is now:")
-
-
+    print(answer)
+    while True:
+        print(hidden_word)
+        guess = input('Guess a letter a-z')
+        if make_a_guess(guess, answer):
+            print("Yey! That's right. Your word is now:")
+            indexes = [i.start() for i in re.finditer(guess, answer)]
+            print(indexes)
+            for i in indexes:
+                hidden_word.insert(i, guess)
+        else:
+            print("Nope, go again!")
 
 
 def main():
