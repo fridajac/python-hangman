@@ -1,15 +1,24 @@
-import random
 
 # Start game by invite
 from check_level import check_level
-from generate_word import generate_word
+from generate_answer import generate_answer
+from make_a_guess import make_a_guess
 
 
-def start_game(name, answer):
-    while True:
-        guess = input('Guess a letter:')
-        if guess in answer:
-            print("Yes!")
+def create_hidden_word(number):
+    hidden_word = []
+    for element in number:
+        hidden_word.append("_")
+    return hidden_word
+
+def start_game(answer):
+    hidden_word = create_hidden_word(len(answer))
+    print(hidden_word)
+    guess = input('Guess a letter a-z')
+    if make_a_guess(guess, answer):
+        print("Yey! That's right. Your word is now:")
+
+
 
 
 def main():
@@ -23,8 +32,8 @@ def main():
             print("You need to enter a number between 1 -3")
 
     print(f'Hi, {name}' + f'! Welcome to level {level}')
-    word = generate_word(level)
-    start_game(name, word)
+    answer = generate_answer(level)
+    start_game(answer)
 
 
 main()
