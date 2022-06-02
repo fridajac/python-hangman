@@ -5,7 +5,7 @@ words_level2 = ["Musicplayer", "Slenderman", "Soulmate"]
 words_level3 = ["Acquiesce", "Appease", "Circumspect"]
 
 
-def generate_word(level):
+def generate_answer(level):
     match level:
         case 1:
             word = random.choice(words_level1)
