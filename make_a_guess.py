@@ -11,5 +11,4 @@ def make_a_guess(game_board, guess, answer):
         for i in indexes:
             game_board[i] = guess
         return game_board
-    else:
-        return None
+    return None
