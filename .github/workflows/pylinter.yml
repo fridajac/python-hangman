@@ -10,3 +10,5 @@ jobs:
 
     - name: linting
       uses: programmingwithalex/pylinter@v1.4.3
+      with:
+        flake8-flags: '--ignore=E501,W391'
