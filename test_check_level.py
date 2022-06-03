@@ -23,3 +23,7 @@ def test_string_should_return_none():
 
 def test_empty_should_return_none():
     assert check_level("") is None
+
+
+def test_ten_should_return_none():
+    assert check_level(10) is None
