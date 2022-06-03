@@ -1,31 +1,31 @@
 import time
 
 from check_level import check_level
-from create_hidden_word import create_hidden_word
-from generate_answer import generate_answer
+from create_game_board import create_game_board
+from generate_secret_word import generate_secret_word
 from make_a_guess import make_a_guess
 from display_hanging_man import display_hanging_man
 
 
-def play_game(answer):
+def play_game(secret_word):
     nbr_of_tries = 5
-    hidden_word = create_hidden_word(len(answer))
+    game_board = create_game_board(len(secret_word))
     time.sleep(1)
     while True:
-        for i in hidden_word:
+        for i in game_board:
             print(i, end=' ')
         print()
         guess = input('Enter your guess between a-z').strip().lower()
-        result = make_a_guess(hidden_word, guess, answer)
+        result = make_a_guess(game_board, guess, secret_word)
         if result is not None:
-            hidden_word = result
+            game_board = result
             print("Yey! That's right")
-            if "_" not in hidden_word:
-                print("Good job, you did it! It was " + answer)
+            if "_" not in game_board:
+                print("Good job, you did it! It was " + secret_word)
                 break
         else:
             nbr_of_tries -= 1
-            display_hanging_man(nbr_of_tries, answer)
+            display_hanging_man(nbr_of_tries, secret_word)
             if nbr_of_tries == 0:
                 break
 
@@ -41,7 +41,7 @@ def start_new_game():
 
     print(f'Hi, {name}' + f'! Welcome to level {level}. Best of luck!')
     time.sleep(1)
-    answer = generate_answer(level)
+    answer = generate_secret_word(level)
     play_game(answer)
 
 
