@@ -1,5 +1,5 @@
 def create_game_board(number):
-    hidden_word = []
+    game_board = []
     for i in range(number):
-        hidden_word.append('_')
-    return hidden_word
+        game_board.append('_')
+    return game_board
