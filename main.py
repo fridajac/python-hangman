@@ -1,3 +1,6 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
 import time
 
 from check_level import check_level
@@ -13,10 +16,10 @@ def play_game(secret_word, game_board):
 
     while True:
         for i in game_board:
-            print(i, end=' ')
+            print(i, end=" ")
 
         print()
-        guess = input('Enter your guess between a-z').strip().lower()
+        guess = input("Enter your guess between a-z").strip().lower()
         result = make_a_guess(game_board, guess, secret_word)
         if result is not None:
             game_board = result
@@ -37,10 +40,9 @@ def start_new_game():
         level = check_level(input("Enter level (1-3): "))
         if level is not None:
             break
-        else:
-            print("You need to enter a number between 1 -3")
+        print("You need to enter a number between 1 -3")
 
-    print(f'Hi, {name}' + f'! Welcome to level {level}. Best of luck!')
+    print(f"Hi, {name}" + f"! Welcome to level {level}. Best of luck!")
     time.sleep(1)
     secret_word = generate_secret_word(level)
     game_board = create_game_board(len(secret_word))
