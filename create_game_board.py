@@ -3,5 +3,5 @@
 # pylint: disable=missing-function-docstring
 
 def create_game_board(number):
-    game_board = '_'*number
+    game_board = '_' * number
     return game_board

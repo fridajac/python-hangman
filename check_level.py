@@ -8,4 +8,3 @@ def check_level(level):
             return int(level)
     except ValueError:
         return None
-

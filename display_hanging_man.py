@@ -58,4 +58,4 @@ def display_hanging_man(count, secret_word):
                   "  |    /| \n"
                   "  |    /  \n"
                   "__|__\n")
-            print("No sorry, you are hanged! The correct answer was", secret_word)
+            print("You are hanged! Secret word was:", secret_word)
