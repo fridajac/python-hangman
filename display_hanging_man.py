@@ -1,5 +1,8 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
 # from: https://data-flair.training/blogs/hangman-game-python-code/
-import time
+
 
 
 def display_hanging_man(count, secret_word):
