@@ -1,4 +1,3 @@
-# Start game by invite
 import time
 
 from check_level import check_level
@@ -31,9 +30,7 @@ def play_game(answer):
                 break
 
 
-def main():
-    print("\nWelcome to Hangman game by Me\n")
-    time.sleep(2)
+def start_new_game():
     name = input("Enter your name: ")
     while True:
         level = check_level(input("Enter level (1-3): "))
@@ -46,6 +43,12 @@ def main():
     time.sleep(1)
     answer = generate_answer(level)
     play_game(answer)
+
+
+def main():
+    print("\nWelcome to Hangman game!\n")
+    time.sleep(1)
+    start_new_game()
 
 
 main()
