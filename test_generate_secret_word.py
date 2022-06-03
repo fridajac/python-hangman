@@ -6,17 +6,17 @@ def test_should_return_str():
 
 
 def test_one_should_return_word_in_level1():
-    words_level1 = ["Summer", "Spice", "Lilly"]
+    words_level1 = ["summer", "spice", "lilly"]
     assert generate_secret_word(1) in words_level1
 
 
 def test_two_should_return_word_in_level2():
-    words_level2 = ["Musicplayer", "Slenderman", "Soulmate"]
+    words_level2 = ["musicplayer", "slenderman", "soulmate"]
     assert generate_secret_word(2) in words_level2
 
 
 def test_three_should_return_word_in_level3():
-    words_level3 = ["Acquiesce", "Appease", "Circumspect"]
+    words_level3 = ["acquiesce", "appease", "circumspect"]
     assert generate_secret_word(3) in words_level3
 
 

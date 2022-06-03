@@ -8,11 +8,11 @@ words_level3 = ["acquiesce", "appease", "circumspect"]
 def generate_secret_word(level):
     match level:
         case 1:
-            word = random.choice(words_level1)
+            secret_word = random.choice(words_level1)
         case 2:
-            word = random.choice(words_level2)
+            secret_word = random.choice(words_level2)
         case 3:
-            word = random.choice(words_level3)
+            secret_word = random.choice(words_level3)
         case _:
             return None
-    return word
+    return secret_word

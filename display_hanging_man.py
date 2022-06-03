@@ -2,7 +2,7 @@
 import time
 
 
-def display_hanging_man(count, answer):
+def display_hanging_man(count, secret_word):
     match count:
         case 4:
             print("   _____ \n"
@@ -56,4 +56,4 @@ def display_hanging_man(count, answer):
                   "  |    /|\ \n"
                   "  |    / \ \n"
                   "__|__\n")
-            print("No sorry, you are hanged! The correct answer was", answer)
+            print("No sorry, you are hanged! The correct answer was", secret_word)
