@@ -14,6 +14,7 @@ def play_game(secret_word, game_board):
     while True:
         for i in game_board:
             print(i, end=' ')
+
         print()
         guess = input('Enter your guess between a-z').strip().lower()
         result = make_a_guess(game_board, guess, secret_word)
