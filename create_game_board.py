@@ -1,5 +1,3 @@
 def create_game_board(number):
-    game_board = []
-    for i in range(number):
-        game_board.append('_')
+    game_board = '_'*number
     return game_board

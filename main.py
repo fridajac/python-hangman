@@ -7,10 +7,10 @@ from make_a_guess import make_a_guess
 from display_hanging_man import display_hanging_man
 
 
-def play_game(secret_word):
+def play_game(secret_word, game_board):
     nbr_of_tries = 5
-    game_board = create_game_board(len(secret_word))
     time.sleep(1)
+
     while True:
         for i in game_board:
             print(i, end=' ')
@@ -41,8 +41,9 @@ def start_new_game():
 
     print(f'Hi, {name}' + f'! Welcome to level {level}. Best of luck!')
     time.sleep(1)
-    answer = generate_secret_word(level)
-    play_game(answer)
+    secret_word = generate_secret_word(level)
+    game_board = create_game_board(len(secret_word))
+    play_game(secret_word, game_board)
 
 
 def main():
